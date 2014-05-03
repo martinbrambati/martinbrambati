@@ -104,6 +104,7 @@ var SampleApp = function() {
             res.setHeader('Content-Type', 'text/html');
             res.send(self.cache_get('index.html') );
         };
+
     };
 
 
@@ -119,6 +120,9 @@ var SampleApp = function() {
         for (var r in self.routes) {
             self.app.get(r, self.routes[r]);
         }
+        self.app.use("/images", express.static(__dirname + "/images"));
+        self.app.use("/css", express.static(__dirname + "/css"));
+        self.app.use("/js", express.static(__dirname + "/js"));
     };
 
 
