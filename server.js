@@ -120,9 +120,12 @@ var SampleApp = function() {
         for (var r in self.routes) {
             self.app.get(r, self.routes[r]);
         }
+
+        //Statics
         self.app.use("/images", express.static(__dirname + "/images"));
         self.app.use("/css", express.static(__dirname + "/css"));
         self.app.use("/js", express.static(__dirname + "/js"));
+        self.app.use("/pdf", express.static(__dirname + "/pdf"));
     };
 
 
